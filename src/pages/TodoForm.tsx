@@ -22,20 +22,9 @@ const TodoForm = () => {
     status: boolean;
   };
 
-// const [status, setStatus] = useState("incomplete"); 
-  // console.log(status,'staaa')
-
-  // const [aaa, setaaa] = useState<FormData[]>([]);
   const editData = todoData.filter((item) => item.id === editId)
   console.log(editData, "eeeeeeeeeee");
 
-  // const editData = editIndex !== null ? formSubmissions[editIndex] : null;
-
-  // const editData = formSubmissions[editIndex];
-
-  // console.log(editData, "editData");
-  // console.log(editData,'editData')
-  // console.log(aaa,'aaaa')
   const [form, setForm] = useState<FormData>({
     name: "",
     description:"",
@@ -76,14 +65,6 @@ const TodoForm = () => {
       dispatch(setFormData({...form , id: uuidv4() }));
     }
 
-    //     setForm({
-    //   name: "",
-    //   date: "",
-    // });
-    // dispatch(setFormData(prev => [...prev, formData]));
-
-    // setaaa([{...formData,formData}])
-    // setaaa((prev) => [...prev, form]);
     navigate("/searchTodo");
     setForm({
       name: "",
@@ -113,7 +94,6 @@ const TodoForm = () => {
     />
   </div>
 
-  {/* Description */}
   <div className="flex flex-col">
     <label htmlFor="description" className="text-gray-700 font-medium mb-1">Description</label>
     <textarea
@@ -128,7 +108,6 @@ const TodoForm = () => {
     />
   </div>
 
-  {/* Due Date */}
   <div className="flex flex-col">
     <label htmlFor="date" className="text-gray-700 font-medium mb-1">Due Date</label>
     <input
@@ -142,7 +121,6 @@ const TodoForm = () => {
     />
   </div>
 
-  {/* Priority */}
   <div className="flex flex-col">
     <label htmlFor="priority" className="text-gray-700 font-medium mb-1">Priority</label>
     <select
@@ -160,20 +138,7 @@ const TodoForm = () => {
     </select>
   </div>
 
-  {/* Status */}
-  {/* <div className="flex items-center space-x-2">
-    <input
-      id="status"
-      type="checkbox"
-      name="status"
-      checked={form.status}
-      onChange={(e) => setForm({ ...form, status: e.target.checked })}
-      className="w-4 h-4"
-    />
-    <label htmlFor="status" className="text-gray-700">Completed</label>
-  </div> */}
 
-  {/* Submit Button */}
   <button
     type="submit"
     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg w-full"
@@ -183,16 +148,6 @@ const TodoForm = () => {
 </form>
 
 
-
-      {/* {editData.map((i)=> {
-  const {name, date} =i
-  return(
-    <div>
-<h1>{date}</h1>
-    <h1>{name}</h1>
-    </div>
-  )
-})} */}
     </div>
   );
 };

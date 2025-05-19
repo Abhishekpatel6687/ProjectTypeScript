@@ -222,65 +222,6 @@ const SearchTodo = () => {
       </div>
     </div>
   );
-
-  //   return (
-  //     <div>
-  //       {inCompleteTodos.map((item, index) => {
-  //           // const [complete, setComplete] = useState(item.status);
-  //         return(
-  //           <div className="flex gap-40" key={index}>
-  //           <h1>{item.name}</h1>
-  //           <h1>{item.description}</h1>
-  //           <h1>{item.date}</h1>
-  //           <h1>{item.priority}</h1>
-  //           <button onClick={() => handleEdit(item.id)}>Edit</button>
-  //           <button onClick={() => handleDelete(item.id)}>Delete</button>
-  //           {/* <div className="flex items-center space-x-2">
-  //             <input
-  //               // id="status"
-  //               type="checkbox"
-  //               // name="status"
-  //               onChange={() => {}}
-  //               disabled
-  //               // checked={complete}
-  //               // onChange={(e) => setComplete(e.target.checked)}
-  //               className="w-4 h-4"
-  //             />
-  //         <button
-  //         onClick={() => handleComplete(item.id, complete)}
-  //         className="text-gray-700"
-  //       >
-  //         {complete ? "Mark Complete" : "Incomplete"}
-  //       </button>
-  //           </div> */}
-  // <input
-  //   type="checkbox"
-  //   checked={completedItems[item.id] || item.status}
-  //   onChange={(e) => handleCheckboxChange(item.id, e.target.checked)}
-  //   className="w-4 h-4"
-  // />
-
-  // {completedItems[item.id] && (
-  //   <button
-  //     onClick={() => handleComplete(item.id, true)}
-  //     className="text-gray-700"
-  //   >
-  //     Submit
-  //   </button>
-  // )}
-  // {!completedItems[item.id] && (
-  //   <button
-  //     onClick={() => handleComplete(item.id, false)}
-  //     className="text-gray-700"
-  //   >
-  //     Incomplete
-  //   </button>
-  // )}
-  //         </div>
-  //         )})}
-  //       <button onClick={() =>  dispatch(updateComplete({ id: item.id, status: !item.status }))}>Delete All </button>
-  //     </div>
-  //   );
 };
 
 export default SearchTodo;

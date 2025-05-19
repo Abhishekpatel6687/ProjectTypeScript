@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-// Single form entry type
 export interface FormEntry {
   id?: string;
   name: string;
@@ -11,14 +10,12 @@ export interface FormEntry {
   status: boolean;
 }
 
-// Slice state type
 interface FormDataState {
   data: FormEntry[];
   editId: string | null;
   searchResults: FormEntry[];
 }
 
-// Initial state
 const initialState: FormDataState = {
   data: [],
   editId: null,
@@ -27,7 +24,6 @@ const initialState: FormDataState = {
 
 export const formDataSlice = createSlice({
   name: "formData",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
     setFormData: (state, action: PayloadAction<FormEntry>) => {
@@ -50,12 +46,10 @@ export const formDataSlice = createSlice({
       }
     },
 
-    // Set index of item to be edited
     seteditData: (state, action: PayloadAction<string>) => {
       state.editId = action.payload;
     },
 
-    // Update the form data at a specific index
     updateFormData: (
       state,
       action: PayloadAction<{ id: string; updated: FormEntry }>
@@ -84,7 +78,6 @@ export const formDataSlice = createSlice({
       state.data = filterData;
     },
 
-    // Clear all form data
     clearFormData: (state) => {
       state.data = [];
       state.editId = null;
