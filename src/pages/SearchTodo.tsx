@@ -13,6 +13,10 @@ import { useInCompleteTodos } from "../hooks/useInCompleteTodos";
 
 const SearchTodo = () => {
   const inCompleteTodos = useInCompleteTodos();
+  console.log(inCompleteTodos,'inCompleteTodos')
+
+  const sortedDate = inCompleteTodos.sort((a, b) => new Date(a.date) - new Date(b.date));
+  console.log(sortedDate,'sortedDate')
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const todoData = useSelector((state: RootState) => state.formData.data);
@@ -151,7 +155,7 @@ const SearchTodo = () => {
                 </div>
               </div>
             ))
-          : inCompleteTodos.map((item) => (
+          : sortedDate.map((item) => (
               <div
                 key={item.id}
                 className="bg-white/40 backdrop-blur-md border border-white/30 shadow-md rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02]"

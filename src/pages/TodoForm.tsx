@@ -46,6 +46,15 @@ const TodoForm = () => {
     }
   }, []);
 
+  const todayDate = new Date();
+  const year = todayDate.getFullYear();
+  const month = (todayDate.getMonth() + 1).toString().padStart(2,'0')
+  const dd = todayDate.getDate().toString().padStart(2,'0');
+  const midDate = `${year}-${month}-${dd}`
+  console.log(todayDate,'todayDate')
+  console.log(midDate,'midDate')
+
+  // const [selectDate, setSelectDate] = useState()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     
@@ -116,6 +125,7 @@ const TodoForm = () => {
       name="date"
       value={form.date}
       onChange={handleChange}
+      min={midDate}
       className="px-4 py-2 border border-gray-300 rounded-lg text-black"
       required
     />
